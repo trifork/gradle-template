@@ -42,7 +42,7 @@ subprojects { subproject ->
 	// Include references to common dependencies so you can keep
 	// versions consistent accross your sub-projects.
 	
-	apply from: 'config/libraries.groovy'
+	apply from: "${rootDir}/config/libraries.groovy"
 
 	// Checkstyle source coding standards.
 	// TODO: These setting are a bit verbose, but
