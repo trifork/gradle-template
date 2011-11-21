@@ -20,8 +20,8 @@ allprojects {
 	// adding explicitly here.
 	repositories {
 		mavenLocal()
-		mavenRepo name: 'trifork-releases', urls: 'http://nexus.ci81.trifork.com/content/groups/public/'
-		mavenRepo name: 'trifork-snapshots', urls: 'http://nexus.ci81.trifork.com/content/groups/public-snapshots/'
+		mavenRepo name: 'trifork-releases', url: 'http://nexus.trifork.com/content/groups/public/'
+		mavenRepo name: 'trifork-snapshots', url: 'http://nexus.trifork.com/content/groups/public-snapshots/'
 	}
 }
 
@@ -67,11 +67,8 @@ dependsOnChildren()
 buildscript {
 	repositories {
 		mavenLocal()
-		mavenRepo name: 'trifork-releases', urls: 'http://nexus.ci81.trifork.com/content/groups/public/'
-		mavenRepo name: 'trifork-snapshots', urls: 'http://nexus.ci81.trifork.com/content/groups/public-snapshots/'
-		
-	}
-	dependencies {
+		mavenRepo name: 'trifork-releases', url: 'http://nexus.trifork.com/content/groups/public/'
+		mavenRepo name: 'trifork-snapshots', url: 'http://nexus.trifork.com/content/groups/public-snapshots/'
 	}
 }
 
