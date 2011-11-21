@@ -75,36 +75,9 @@ and other artifacts. Maven repos are the de-facto standard for artifact
 sharing and by using it you get a high degree of interoperability between
 build systems.
 
-When using the deployment-plugin it is important to manage your build version.
-The property `version` should always update it when you have made a release to
-the repository. It is defined in the 'gradle.properties' file.
-
-You will only be able to release an artifact of a given version once. If you
-try to redeploy a release artifact, the deployment will fail (as it should).
-If you have made a mistake in a release, the only thing you can do is to
-confess you messed up and make a new release with a version bump.
-
-Deploy a release artifact:
-
-    gradle deployRelease
-
-While releases are fine when you are actually finished with an iteration or
-some other milestone, it is not always convenient to use release artifacts
-during active development. Therefore when you want to share your diamonds in
-the rough, you can use _Snapshot_ versions. Snapshots of a given version can
-be deployed with any number of times. For people familiar with Ivy, snapshots
-can be used as a 'latest integration' dependencies.
-
-Deploy a snapshot artifact:
-
-    gradle deploySnapshot
-
 When making a release it is important to make sure that you don't
 depend on any snapshot artifacts. Since snapshots change over time, future
 snapshot versions will potentially break your release (which is bad).
-
-So make sure you have no '-SNAPSHOT' dependencies when you call
-`deployRelease` or at the very least, as few of them as possible.
 
 TODO: In future this check might be automated.
 
@@ -130,7 +103,7 @@ a normal push.
 Requirements
 ------------
 
-This build setup is made for Gradle 1.0-milestone-1+.
+This build setup is made for Gradle 1.0-milestone-6.
 
 If you want to run the Scala subproject you will need to have install a
 version of Scala.
