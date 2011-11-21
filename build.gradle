@@ -74,3 +74,13 @@ buildscript {
 	dependencies {
 	}
 }
+
+// This task creates a wrapper so people don't have to have
+// Gradle installed to build the program. This has already
+// been executed and is included in the repo. 
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.0-milestone-6'
+    jarFile = 'config/gradle/wrapper.jar'
+}
+
