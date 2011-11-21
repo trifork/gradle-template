@@ -48,7 +48,7 @@ subprojects { subproject ->
 	// Shared dependencies for all subprojects.
 	// Logging is a common shared dependency.
 	dependencies {
-		testCompile	libraries.testng
+		testCompile	libraries.junit
 	}
 
 	// Add some extra memory for testing, this is usually useful.
