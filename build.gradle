@@ -1,8 +1,6 @@
-//////////////////////////////////////////////////////////////////////////////
 // This file is the base build-script for the project. There are additional
 // config files in the 'config'-directory, that handle different aspects of
 // the build and deployment for the project.
-//////////////////////////////////////////////////////////////////////////////
 
 apply plugin: 'java-base'
 
