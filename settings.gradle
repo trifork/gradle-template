@@ -4,6 +4,7 @@
 
 include 'subproject1'
 include 'subproject2'
+include 'integrationTest'
 
 // To avoid every gradle file being called 'build.gradle',
 // subprojects are required to name theirs 

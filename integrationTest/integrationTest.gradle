@@ -1,0 +1,21 @@
+apply plugin: 'groovy'
+
+dependencies {
+    groovy 'org.codehaus.groovy:groovy:1.7.10'
+    testCompile 'info.cukes:cucumber-groovy:1.0.0-SNAPSHOT'
+    testCompile 'info.cukes:cucumber-junit:1.0.0-SNAPSHOT'
+    testCompile 'junit:junit:4.10'
+}
+
+task(run, dependsOn: 'testClasses', type: JavaExec) {
+    main = "cucumber.cli.Main"
+    classpath = sourceSets.test.runtimeClasspath
+    args = ["--glue", "cucumber/runtime/groovy", "cucumber/runtime",
+            "--format", "pretty"]
+}
+
+repositories {
+    mavenRepo(url: 'https://oss.sonatype.org/content/repositories/snapshots')
+}
+
+defaultTasks 'run'
