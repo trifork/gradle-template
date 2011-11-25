@@ -2,6 +2,8 @@
 // config files in the 'config'-directory, that handle different aspects of
 // the build and deployment for the project.
 
+import com.trifork.gradle.plugins.DocPlugin
+
 apply plugin: 'java-base'
 
 // Please make sure you read the README.md file before you try to understand
@@ -25,7 +27,9 @@ allprojects {
 }
 
 subprojects { subproject ->
-	
+    
+    apply plugin: DocPlugin
+    
 	// Subproject currently always default to java. This might change in the future.
 	// If you are making WARs take a look at the 'war' plugin.
 	apply plugin: 'java'
@@ -66,8 +70,8 @@ dependsOnChildren()
 buildscript {
 	repositories {
 		mavenLocal()
-		mavenRepo name: 'trifork-releases', url: 'http://nexus.trifork.com/content/groups/public/'
-		mavenRepo name: 'trifork-snapshots', url: 'http://nexus.trifork.com/content/groups/public-snapshots/'
+		mavenRepo url: 'http://nexus.trifork.com/content/groups/public/'
+		mavenRepo url: 'http://nexus.trifork.com/content/groups/public-snapshots/'
 	}
 }
 

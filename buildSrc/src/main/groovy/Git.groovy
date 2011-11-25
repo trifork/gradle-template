@@ -1,4 +1,4 @@
-package org.gradle.build
+package com.trifork.gradle
 
 import org.gradle.api.Project
 
@@ -35,6 +35,13 @@ class Git {
         project.exec {
             executable = 'git'
             args = ['branch', branch]
+        }
+    }
+    
+    def sha1() {
+        project.exec {
+            executable = 'git'
+            args = ['log', '--pretty=format:%H']
         }
     }
 }

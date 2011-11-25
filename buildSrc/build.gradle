@@ -2,17 +2,15 @@
 // and is compiled and available to other gradle files in the build. 
 
 apply plugin: 'groovy'
-apply plugin: 'code-quality'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
 repositories {
-    mavenRepo(url: 'http://repo.gradle.org/gradle/libs')
+    mavenRepo url: 'http://repo.gradle.org/gradle/libs'
 }
 
 dependencies {
-    compile gradleApi()
-    compile 'com.google.guava:guava:10.0.1@jar'
-    compile 'commons-lang:commons-lang:2.6@jar'
     groovy localGroovy()
+    
+    compile gradleApi()
 }
